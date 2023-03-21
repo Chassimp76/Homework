@@ -1,0 +1,8 @@
+Select d.DepartmentNm, avg(g.grade)
+	FROM Subjects s 
+	Inner Join Grades g
+			On s.SubjectId = g.SubjectId
+		Inner Join Departments d
+			On s.DepartmentId = d.DepartmentId
+	Group By d.DepartmentNm
+	Order By avg(g.grade) desc

@@ -1,0 +1,7 @@
+Select s.StudentName
+	,avg(g.grade) As GPA
+	From Students s
+		Inner Join Grades g 
+			On s.StudentId = g.StudentId
+		Group By s.StudentName
+		Order By avg(g.grade) desc
